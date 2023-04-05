@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohini</title>
+    <style>
+        div {
+            display: inline-block;
+        }
+
+        .box1 {
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            border: 2px;
+        }
+
+        .box2 {
+            background-color: yellow;
+            height: 100px;
+            width: 100px;
+            border: 2px;
+        }
+
+        .box3 {
+            background-color: green;
+            height: 100px;
+            width: 100px;
+            border: 2px;
+        }
+
+        .box4 {
+            background-color: blue;
+            height: 100px;
+            width: 100px;
+            border: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="boxes">
+
+    </div>
+
+
+    <div class="box1" id="0">1</div>
+    <div class="box2" id="1">2</div>
+    <br><br>
+    <button class="button" id="xyz" onclick="clockwise_rotation()">CLOCK-WISE</button>
+    <button class="button" onclick="anticlockwise_rotation()">ANTICLOCKWISE</button>
+    <br><br>
+    <div class="box4" id="3">4 </div>
+    <div class="box3" id="2">3</div>
+
+    <script>
+        var x = ["blue", "red", "yellow", "green"]
+        const clockwise_rotation = () => {
+
+            for (let index = 0; index < x.length; index++) {
+                console.log(index);
+
+                document.getElementById(`${index}`).style.backgroundColor = x[index];
+            }
+            const y = x.pop()
+            console.log(y);
+            x.unshift(y);
+            console.log(x);
+
+
+        }
+
+        // var arr = ["blue", "red", "yellow", "green"]
+        const anticlockwise_rotation = () => {
+            // x.reverse(x)
+            for (let index = 0; index < x.length; index++) {
+                console.log(index);
+
+                document.getElementById(`${index}`).style.backgroundColor = x[index];
+            }
+            const y = x.shift()
+            console.log(y);
+            x.push(y);
+            console.log(x);
+
+
+        }
+
+    </script>
+</body>
+
+</html>
